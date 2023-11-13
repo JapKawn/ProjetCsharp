@@ -17,7 +17,6 @@ namespace Projet
         {
             InitializeComponent();
             this.FormClosing += Manegelec_FormClosing;
-            ChargerDonnees();
             // Appeler la méthode ChargerDonnees pour charger les données dans le DataGridView
         }
 
@@ -75,41 +74,9 @@ namespace Projet
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Connexion
+            // Requête
 
         }
-
-        private void ChargerDonnees()
-        {
-            try
-            {
-                // Connexion à la base de données
-                string connectionString = "Data Source=(local);Initial Catalog=menageleccsharp;User ID=root;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-
-                    // Requête SQL pour récupérer les données
-                    string query = "SELECT idCommande, date, client FROM menageleccsharp";
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        // Utilisation d'un SqlDataAdapter pour remplir un DataTable
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                        {
-                            DataTable dataTable = new DataTable();
-                            adapter.Fill(dataTable);
-
-                            // Liaison du DataTable au DataGridView
-                            dataGridView1.DataSource = dataTable;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erreur : " + ex.Message);
-            }
-        }
-
-
     }
 }

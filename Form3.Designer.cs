@@ -1,4 +1,7 @@
 ﻿
+using System;
+using System.Windows.Forms;
+
 namespace Projet
 {
     partial class Form3
@@ -46,9 +49,6 @@ namespace Projet
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idCommande = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,32 +235,12 @@ namespace Projet
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCommande,
-            this.date,
-            this.client});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 117);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 111);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(343, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
             this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idCommande
-            // 
-            this.idCommande.HeaderText = "idCommande";
-            this.idCommande.Name = "idCommande";
-            // 
-            // date
-            // 
-            this.date.HeaderText = "date";
-            this.date.Name = "date";
-            // 
-            // client
-            // 
-            this.client.HeaderText = "client";
-            this.client.Name = "client";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // Form3
             // 
@@ -294,10 +274,12 @@ namespace Projet
 
         }
 
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCommande;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn client;
         protected System.Windows.Forms.Button button1;
         protected System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.TextBox textBox2;
@@ -313,6 +295,6 @@ namespace Projet
         protected System.Windows.Forms.CheckBox checkBox2;
         protected System.Windows.Forms.CheckBox checkBox3;
         protected System.Windows.Forms.CheckBox checkBox4;
-        protected System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
