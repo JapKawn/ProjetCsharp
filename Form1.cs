@@ -58,25 +58,7 @@ namespace Projet
 
         private void Manegelec_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Vérifier si la fermeture est due à l'action de l'utilisateur
             if (e.CloseReason == CloseReason.UserClosing)
-            {
-                // Confirmer la fermeture avec un message (facultatif)
-                DialogResult result = MessageBox.Show("Voulez-vous vraiment quitter l'application?", "Confirmation", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
-                {
-                    // Fermer l'application
-                    Application.Exit();
-                }
-                else
-                {
-                    // Annuler la fermeture en annulant l'événement
-                    e.Cancel = true;
-                }
-            }
-            // Si la fermeture n'est pas due à l'action de l'utilisateur, fermer l'application
-            else
             {
                 Application.Exit();
             }

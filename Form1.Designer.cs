@@ -45,10 +45,12 @@ namespace Projet
             // 
             this.Utilisateur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.Utilisateur.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Utilisateur.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Utilisateur.ForeColor = System.Drawing.Color.White;
             this.Utilisateur.Location = new System.Drawing.Point(376, 113);
             this.Utilisateur.Margin = new System.Windows.Forms.Padding(0);
             this.Utilisateur.Name = "Utilisateur";
+            this.Utilisateur.ReadOnly = true;
             this.Utilisateur.Size = new System.Drawing.Size(151, 13);
             this.Utilisateur.TabIndex = 1;
             this.Utilisateur.Text = "Utilisateur";
@@ -80,9 +82,11 @@ namespace Projet
             // 
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox2.ForeColor = System.Drawing.Color.White;
             this.textBox2.Location = new System.Drawing.Point(376, 188);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(151, 13);
             this.textBox2.TabIndex = 5;
             this.textBox2.Text = "Mot de passe";
@@ -92,11 +96,13 @@ namespace Projet
             this.MotdepasseText.ForeColor = System.Drawing.Color.Black;
             this.MotdepasseText.Location = new System.Drawing.Point(376, 225);
             this.MotdepasseText.Name = "MotdepasseText";
+            this.MotdepasseText.PasswordChar = '*';
             this.MotdepasseText.Size = new System.Drawing.Size(151, 20);
             this.MotdepasseText.TabIndex = 6;
             // 
             // Connexion
             // 
+            this.Connexion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Connexion.Location = new System.Drawing.Point(376, 276);
             this.Connexion.Name = "Connexion";
             this.Connexion.Size = new System.Drawing.Size(151, 31);
@@ -117,6 +123,7 @@ namespace Projet
             this.Controls.Add(this.UtilisateurText);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Utilisateur);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Manegelec";
             this.Text = "Manegelec - Accès à l\'application";
             this.Load += new System.EventHandler(this.Manegelec_Load);

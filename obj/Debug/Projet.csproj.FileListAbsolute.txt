@@ -9,3 +9,4 @@ S:\ProjetC#\Projet\obj\Debug\Projet.csproj.CoreCompileInputs.cache
 S:\ProjetC#\Projet\obj\Debug\Projet.exe
 S:\ProjetC#\Projet\obj\Debug\Projet.pdb
 S:\ProjetC#\Projet\obj\Debug\Projet.Form2.resources
+S:\ProjetC#\Projet\obj\Debug\Projet.Form3.resources
