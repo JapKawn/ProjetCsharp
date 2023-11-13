@@ -1,0 +1,11 @@
+S:\ProjetC#\Projet\bin\Debug\Projet.exe.config
+S:\ProjetC#\Projet\bin\Debug\Projet.exe
+S:\ProjetC#\Projet\bin\Debug\Projet.pdb
+S:\ProjetC#\Projet\obj\Debug\Projet.csprojAssemblyReference.cache
+S:\ProjetC#\Projet\obj\Debug\Projet.Manegelec.resources
+S:\ProjetC#\Projet\obj\Debug\Projet.Properties.Resources.resources
+S:\ProjetC#\Projet\obj\Debug\Projet.csproj.GenerateResource.cache
+S:\ProjetC#\Projet\obj\Debug\Projet.csproj.CoreCompileInputs.cache
+S:\ProjetC#\Projet\obj\Debug\Projet.exe
+S:\ProjetC#\Projet\obj\Debug\Projet.pdb
+S:\ProjetC#\Projet\obj\Debug\Projet.Form2.resources
