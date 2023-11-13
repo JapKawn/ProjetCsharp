@@ -123,10 +123,11 @@ namespace Projet
             this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox6.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.textBox6.ForeColor = System.Drawing.Color.White;
             this.textBox6.Location = new System.Drawing.Point(650, 48);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(126, 13);
+            this.textBox6.Size = new System.Drawing.Size(126, 14);
             this.textBox6.TabIndex = 6;
             this.textBox6.Text = "Recherche spécifique";
             this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
@@ -147,12 +148,12 @@ namespace Projet
             this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox7.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
             this.textBox7.ForeColor = System.Drawing.Color.White;
             this.textBox7.Location = new System.Drawing.Point(338, 12);
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(184, 16);
+            this.textBox7.Size = new System.Drawing.Size(184, 19);
             this.textBox7.TabIndex = 8;
             this.textBox7.Text = "Gestion des commandes";
             this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
@@ -162,6 +163,7 @@ namespace Projet
             this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox8.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.textBox8.ForeColor = System.Drawing.Color.White;
             this.textBox8.Location = new System.Drawing.Point(338, 48);
             this.textBox8.Multiline = true;
@@ -178,11 +180,12 @@ namespace Projet
             this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox9.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.textBox9.ForeColor = System.Drawing.Color.White;
             this.textBox9.Location = new System.Drawing.Point(52, 48);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(139, 13);
+            this.textBox9.Size = new System.Drawing.Size(139, 14);
             this.textBox9.TabIndex = 10;
             this.textBox9.Text = "Liste des commandes";
             // 
@@ -235,12 +238,12 @@ namespace Projet
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 111);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 117);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(198, 321);
             this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // Form3
             // 
@@ -274,6 +277,11 @@ namespace Projet
 
         }
 
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             throw new NotImplementedException();
@@ -295,6 +303,7 @@ namespace Projet
         protected System.Windows.Forms.CheckBox checkBox2;
         protected System.Windows.Forms.CheckBox checkBox3;
         protected System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private DataGridViewCellEventHandler dataGridView1_CellContentClick_2;
+        private DataGridView dataGridView1;
     }
 }

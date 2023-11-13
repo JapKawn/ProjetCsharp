@@ -1,31 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Projet
 {
     public partial class Form3 : Form
     {
-        public Form3()
+         public Form3()
         {
             InitializeComponent();
-            this.FormClosing += Manegelec_FormClosing;
-            // Appeler la méthode ChargerDonnees pour charger les données dans le DataGridView
-        }
+            this.FormClosing += Form3_FormClosing;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form2 form2 = new Form2();
-            form2.Show();
-
-            this.Hide();
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -33,12 +19,19 @@ namespace Projet
             // Vous pouvez également appeler ChargerDonnees ici si nécessaire.
         }
 
-        private void Manegelec_FormClosing(object sender, FormClosingEventArgs e)
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 Application.Exit();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+            this.Hide();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -70,13 +63,6 @@ namespace Projet
         {
 
         }
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Connexion
-            // Requête
-
-        }
     }
 }
+   
