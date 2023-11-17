@@ -31,30 +31,15 @@ namespace Projet
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manegelec));
-            this.Utilisateur = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UtilisateurText = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.MotdepasseText = new System.Windows.Forms.TextBox();
             this.Connexion = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Utilisateur
-            // 
-            this.Utilisateur.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.Utilisateur.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Utilisateur.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Utilisateur.ForeColor = System.Drawing.Color.White;
-            this.Utilisateur.Location = new System.Drawing.Point(376, 113);
-            this.Utilisateur.Margin = new System.Windows.Forms.Padding(0);
-            this.Utilisateur.Name = "Utilisateur";
-            this.Utilisateur.ReadOnly = true;
-            this.Utilisateur.Size = new System.Drawing.Size(151, 13);
-            this.Utilisateur.TabIndex = 1;
-            this.Utilisateur.Text = "Utilisateur";
-            this.Utilisateur.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // contextMenuStrip1
             // 
@@ -77,19 +62,7 @@ namespace Projet
             this.UtilisateurText.Name = "UtilisateurText";
             this.UtilisateurText.Size = new System.Drawing.Size(151, 20);
             this.UtilisateurText.TabIndex = 4;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(376, 188);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(151, 13);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Mot de passe";
+            this.UtilisateurText.TextChanged += new System.EventHandler(this.UtilisateurText_TextChanged);
             // 
             // MotdepasseText
             // 
@@ -111,18 +84,39 @@ namespace Projet
             this.Connexion.UseVisualStyleBackColor = true;
             this.Connexion.Click += new System.EventHandler(this.Connexion_Click_1);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(377, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Utilisateur";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(373, 187);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Mot de passe";
+            // 
             // Manegelec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(600, 388);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Connexion);
             this.Controls.Add(this.MotdepasseText);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.UtilisateurText);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.Utilisateur);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Manegelec";
             this.Text = "Manegelec - Accès à l\'application";
@@ -134,14 +128,13 @@ namespace Projet
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox Utilisateur;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox UtilisateurText;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox MotdepasseText;
         private System.Windows.Forms.Button Connexion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
