@@ -1,76 +1,54 @@
-﻿using Projet.Manager;
+﻿
+using Projet.Manager;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Projet
 {
     public partial class Form3 : Form
     {
-        public SqlConnection connection = new SqlConnection("Database=menagelecsharp;Server=localhost;User=root;Password=");
+        private MySqlConnection connection = new MySqlConnection("Database=menagelecsharp;Server=localhost;User=root;Password=");
+
         public Form3()
         {
-            connection.Open();
             InitializeComponent();
-            DataTable table = new DataTable();
-            // rajoute les colonnes
-            table.Columns.Add("id", typeof(int));
-            table.Columns.Add("date", typeof(DateTime));
-            table.Columns.Add("client", typeof(int));
-            // les commandes sql
-            SqlCommand command = new SqlCommand("SELECT id , date , client FROM commande", connection);
-            //lire les donnees
-            SqlDataReader dataReader = command.ExecuteReader();
-            while (dataReader.Read())
-            {
-                // creer une nouvelle lignes
-                DataRow dataRow = table.NewRow();
-                // Remplir la nouvelle ligne
-                dataRow["id"] = dataReader.GetInt32("id");
-                dataRow["date"] = dataReader.GetDateTime("date");
-                dataRow["client"] = dataReader.GetInt32("client");
-                table.Rows.Add(dataRow);
-                dataGridView1.DataSource = table;
-            }
-            connection.Close();
+
+            checkBox1.CheckedChanged += checkBox_CheckedChanged;
+            checkBox2.CheckedChanged += checkBox_CheckedChanged;
+            checkBox3.CheckedChanged += checkBox_CheckedChanged;
         }
 
-
-        
-        public bool ConnexionMysql()
+        private bool ConnexionMysql()
         {
-
             try
-
             {
                 connection.Open();
                 MessageBox.Show("Connecté");
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Non Connecté");
+                MessageBox.Show($"Erreur de connexion : {ex.Message}");
                 return false;
             }
-
         }
-        public bool CloseMysql()
+
+        private bool CloseMysql()
         {
-
             try
-
             {
                 connection.Close();
-                MessageBox.Show("Connecté");
+                MessageBox.Show("Déconnecté");
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Non Connecté");
+                MessageBox.Show($"Erreur de déconnexion : {ex.Message}");
                 return false;
             }
-
         }
 
         private void Form3_Load(object sender, EventArgs e)
@@ -82,6 +60,10 @@ namespace Projet
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
+                if (ConnexionMysql()) // Fermer la connexion avant de quitter l'application
+                {
+                    CloseMysql();
+                }
                 Application.Exit();
             }
         }
@@ -95,38 +77,69 @@ namespace Projet
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            // Code associé au changement de texte dans textBox1
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-
+            // Code associé au changement de texte dans textBox6
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
+            // Code associé au changement de texte dans textBox4
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            // Code associé au clic sur le bouton2
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-
+            // Code associé au changement de texte dans textBox7
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-
+            // Code associé au changement de texte dans textBox8
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Code associé à un clic dans le dataGridView1
+        ]
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                checkBox2.Checked = false;
+                checkBox3.Checked = false;
+            }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == true)
+            {
+                checkBox1.Checked = false;
+                checkBox3.Checked = false;
+            }
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked == true)
+            {
+                checkBox1.Checked = false;
+                checkBox2.Checked = false;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            // Code associé au clic sur le label2
         }
     }
 }
-   

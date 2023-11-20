@@ -62,6 +62,7 @@ namespace Projet
             this.UtilisateurText.Name = "UtilisateurText";
             this.UtilisateurText.Size = new System.Drawing.Size(151, 20);
             this.UtilisateurText.TabIndex = 4;
+            this.UtilisateurText.Text = "fournier";
             this.UtilisateurText.TextChanged += new System.EventHandler(this.UtilisateurText_TextChanged);
             // 
             // MotdepasseText
@@ -72,6 +73,7 @@ namespace Projet
             this.MotdepasseText.PasswordChar = '*';
             this.MotdepasseText.Size = new System.Drawing.Size(151, 20);
             this.MotdepasseText.TabIndex = 6;
+            this.MotdepasseText.Text = "1234";
             // 
             // Connexion
             // 
@@ -86,7 +88,6 @@ namespace Projet
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(377, 112);
             this.label1.Name = "label1";

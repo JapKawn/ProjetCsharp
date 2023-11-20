@@ -1,73 +1,135 @@
-﻿using System;
-using Projet.Entities;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+﻿using Projet.Entities;
+using MySql.Data.MySqlClient;
+using System.Collections.ObjectModel;
+using Projet.Service;
+using System;
 
-class CommandeManager
+namespace Projet.Manager
 {
-    private List<Commande> commandes = new List<Commande>();
-    private SqlConnection connection = new SqlConnection("Database=menagelecsharp;Server=localhost;User=root;Password=");
-
-    public bool ConnexionMysql()
+    class CommandeManager
     {
-        try
+        public void CreateCommande(Commande commande)
         {
-            connection.Open();
-            MessageBox.Show("Connecté");
-            return true;
+            string query = "INSERT INTO commande (idCommande, date, estPayee, estExpediee, idClient) VALUES (@idCommande, @date, @estPayee, @estExpediee, @idClient)";
+
+            using (MySqlConnection connection = InitializeConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idCommande", commande.IdCommande);
+                    command.Parameters.AddWithValue("@date", commande.Date);
+                    command.Parameters.AddWithValue("@estPayee", commande.EstPayee);
+                    command.Parameters.AddWithValue("@estExpediee", commande.EstExpediee);
+                    command.Parameters.AddWithValue("@idClient", commande.IdClient);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Une erreur s'est produite lors de la création de la commande : {ex.Message}");
+                        // Gérer l'exception selon les besoins
+                    }
+                }
+            }
         }
-        catch (Exception ex)
+
+        public Collection<Commande> ReadAllCommande()
         {
-            MessageBox.Show("Erreur de connexion : " + ex.Message);
-            return false;
-        }
-    }
+            string query = "SELECT * FROM commande";
+            Collection<Commande> CommandeConnection = new Collection<Commande>();
 
-    public bool CloseMysql()
-    {
-        try
+            using (MySqlConnection connection = InitializeConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Commande commande = new Commande()
+                            {
+                                IdCommande = reader.GetInt32("idCommande"),
+                                Date = reader.GetDateTime("date"),
+                                EstPayee = reader.GetBoolean("estPayee"),
+                                EstExpediee = reader.GetBoolean("estExpediee"),
+                                IdClient = reader.GetInt32("idClient")
+                            };
+
+                            CommandeConnection.Add(commande);
+                        }
+                    }
+                }
+            }
+
+            return CommandeConnection;
+        }
+
+        public void SaveCommande(Commande commande)
         {
-            connection.Close();
-            MessageBox.Show("Déconnecté");
-            return true;
+            // Exemple d'implémentation (à personnaliser selon les besoins)
+            string query = "INSERT INTO commande (idCommande, date, estPayee, estExpediee, idClient) VALUES (@idCommande, @date, @estPayee, @estExpediee, @idClient)";
+
+            using (MySqlConnection connection = InitializeConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idCommande", commande.IdCommande);
+                    command.Parameters.AddWithValue("@date", commande.Date);
+                    command.Parameters.AddWithValue("@estPayee", commande.EstPayee);
+                    command.Parameters.AddWithValue("@estExpediee", commande.EstExpediee);
+                    command.Parameters.AddWithValue("@idClient", commande.IdClient);
+
+                    command.ExecuteNonQuery();
+                }
+            }
         }
-        catch (Exception ex)
+
+        public void UpdateCommande(Commande commande)
         {
-            MessageBox.Show("Erreur lors de la déconnexion : " + ex.Message);
-            return false;
+            // Exemple d'implémentation (à personnaliser selon les besoins)
+            string query = "UPDATE commande SET date = @date, estPayee = @estPayee, estExpediee = @estExpediee, idClient = @idClient WHERE idCommande = @idCommande";
+
+            using (MySqlConnection connection = InitializeConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idCommande", commande.IdCommande);
+                    command.Parameters.AddWithValue("@date", commande.Date);
+                    command.Parameters.AddWithValue("@estPayee", commande.EstPayee);
+                    command.Parameters.AddWithValue("@estExpediee", commande.EstExpediee);
+                    command.Parameters.AddWithValue("@idClient", commande.IdClient);
+
+                    command.ExecuteNonQuery();
+                }
+            }
         }
-    }
 
-    public void createCommande(Commande commande)
-    {
-        commandes.Add(commande);
-    }
+        public void DeleteCommande(Commande commande)
+        {
+            // Exemple d'implémentation (à personnaliser selon les besoins)
+            string query = "DELETE FROM commande WHERE idCommande = @idCommande";
 
-    public List<Commande> readCommande()
-    {
-        // Simulez la récupération des données depuis la base de données
-        // Remplacez ceci par votre logique de récupération réelle depuis la base de données
-        return commandes;
-    }
+            using (MySqlConnection connection = InitializeConnection.GetConnection())
+            {
+                connection.Open();
 
-    public void saveCommande(Commande commande)
-    {
-        // Implémentez la logique de sauvegarde dans une base de données ou ailleurs
-        Console.WriteLine("Commande sauvegardée : " + commande.id);
-    }
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idCommande", commande.IdCommande);
 
-    public void updateCommande(Commande commande)
-    {
-        // Implémentez la logique de mise à jour dans une base de données ou ailleurs
-        Console.WriteLine("Commande mise à jour : " + commande.id);
-    }
-
-    public void deleteCommande(Commande commande)
-    {
-        commandes.Remove(commande);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
