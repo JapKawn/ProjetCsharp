@@ -115,7 +115,7 @@ namespace Projet
 
         private void CheckTout_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckTout.Checked = true)
+            if (CheckTout.Checked)
             {
                 CheckPayer.Checked = false;
                 CheckExpedier.Checked = false;
@@ -142,7 +142,7 @@ namespace Projet
 
         private void CheckPayer_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckPayer.Checked = true)
+            if (CheckPayer.Checked)
             {
                 CheckTout.Checked = false;
                 CheckExpedier.Checked = false;
@@ -154,9 +154,9 @@ namespace Projet
                 DataGridViewCommande.Columns[1].Name = "date";
                 DataGridViewCommande.Columns[2].Name = "client";
 
-                Collection<Commande> nonPayeeCommandes = CommandeManager.ReadNonPayeeCommandes();
+                Collection<Commande> commandes = CommandeManager.ReadEstPayeeCommande();
 
-                foreach (Commande commande in nonPayeeCommandes)
+                foreach (Commande commande in commandes)
                 {
                     DataGridViewCommande.Rows.Add(commande.IdCommande, commande.Date, commande.IdClient);
                 }
@@ -169,7 +169,7 @@ namespace Projet
 
         private void CheckExpedier_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckExpedier.Checked = true)
+            if (CheckExpedier.Checked)
             {
                 CheckTout.Checked = false;
                 CheckPayer.Checked = false;
@@ -181,9 +181,9 @@ namespace Projet
                 DataGridViewCommande.Columns[1].Name = "date";
                 DataGridViewCommande.Columns[2].Name = "client";
 
-                Collection<Commande> nonExpedieeCommandes = CommandeManager.ReadNonExpedieeCommandes();
+                Collection<Commande> commandes = CommandeManager.ReadEstExpedieeCommande();
 
-                foreach (Commande commande in nonExpedieeCommandes)
+                foreach (Commande commande in commandes)
                 {
                     DataGridViewCommande.Rows.Add(commande.IdCommande, commande.Date, commande.IdClient);
                 }
@@ -198,11 +198,6 @@ namespace Projet
         private void label2_Click(object sender, EventArgs e)
         {
             // Code associé au clic sur le label2
-        }
-
-        private void checkBox3_CheckedChanged_1(object sender, EventArgs e)
-        {
-
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)

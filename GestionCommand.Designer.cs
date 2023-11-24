@@ -128,7 +128,7 @@ namespace Projet
             this.CheckPayer.TabIndex = 12;
             this.CheckPayer.Text = "A payer";
             this.CheckPayer.UseVisualStyleBackColor = true;
-            this.CheckPayer.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged_1);
+            this.CheckPayer.CheckedChanged += new System.EventHandler(this.CheckPayer_CheckedChanged);
             // 
             // CheckExpedier
             // 
@@ -141,6 +141,7 @@ namespace Projet
             this.CheckExpedier.TabIndex = 13;
             this.CheckExpedier.Text = "A expédier";
             this.CheckExpedier.UseVisualStyleBackColor = true;
+            this.CheckExpedier.CheckedChanged += new System.EventHandler(this.CheckExpedier_CheckedChanged);
             // 
             // DataGridViewCommande
             // 
@@ -177,7 +178,7 @@ namespace Projet
             this.LabelGestion.Size = new System.Drawing.Size(195, 20);
             this.LabelGestion.TabIndex = 16;
             this.LabelGestion.Text = "Gestion des commandes";
-            this.LabelGestion.Click += new System.EventHandler(this.label2_Click);
+            this.LabelGestion.Click += new System.EventHandler(this.Label);
             // 
             // LabelCommandeSelec
             // 
@@ -261,7 +262,7 @@ namespace Projet
             this.panel2.TabIndex = 24;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // Form3
+            // GestionCommand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,7 +288,7 @@ namespace Projet
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.MenuButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form3";
+            this.Name = "GestionCommand";
             this.Text = "Gestion des commandes";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridViewCommande)).EndInit();
@@ -295,6 +296,11 @@ namespace Projet
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Label(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
