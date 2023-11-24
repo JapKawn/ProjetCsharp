@@ -32,13 +32,13 @@ namespace Projet
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manegelec));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PictureBox = new System.Windows.Forms.PictureBox();
             this.UtilisateurText = new System.Windows.Forms.TextBox();
             this.MotdepasseText = new System.Windows.Forms.TextBox();
-            this.Connexion = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.ConnexionButton = new System.Windows.Forms.Button();
+            this.LabelUser = new System.Windows.Forms.Label();
+            this.LabelPassword = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -46,14 +46,14 @@ namespace Projet
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // pictureBox1
+            // PictureBox
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(49, 46);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 298);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.PictureBox.Image = ((System.Drawing.Image)(resources.GetObject("PictureBox.Image")));
+            this.PictureBox.Location = new System.Drawing.Point(49, 46);
+            this.PictureBox.Name = "PictureBox";
+            this.PictureBox.Size = new System.Drawing.Size(300, 298);
+            this.PictureBox.TabIndex = 3;
+            this.PictureBox.TabStop = false;
             // 
             // UtilisateurText
             // 
@@ -75,36 +75,38 @@ namespace Projet
             this.MotdepasseText.TabIndex = 6;
             this.MotdepasseText.Text = "1234";
             // 
-            // Connexion
+            // ConnexionButton
             // 
-            this.Connexion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Connexion.Location = new System.Drawing.Point(376, 276);
-            this.Connexion.Name = "Connexion";
-            this.Connexion.Size = new System.Drawing.Size(151, 31);
-            this.Connexion.TabIndex = 7;
-            this.Connexion.Text = "Se connecter";
-            this.Connexion.UseVisualStyleBackColor = true;
-            this.Connexion.Click += new System.EventHandler(this.Connexion_Click_1);
+            this.ConnexionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ConnexionButton.Location = new System.Drawing.Point(376, 276);
+            this.ConnexionButton.Name = "ConnexionButton";
+            this.ConnexionButton.Size = new System.Drawing.Size(151, 31);
+            this.ConnexionButton.TabIndex = 7;
+            this.ConnexionButton.Text = "Se connecter";
+            this.ConnexionButton.UseVisualStyleBackColor = true;
+            this.ConnexionButton.Click += new System.EventHandler(this.Connexion_Click_1);
             // 
-            // label1
+            // LabelUser
             // 
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(377, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Utilisateur";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.LabelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.LabelUser.ForeColor = System.Drawing.Color.White;
+            this.LabelUser.Location = new System.Drawing.Point(377, 112);
+            this.LabelUser.Name = "LabelUser";
+            this.LabelUser.Size = new System.Drawing.Size(89, 21);
+            this.LabelUser.TabIndex = 8;
+            this.LabelUser.Text = "Utilisateur";
+            this.LabelUser.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // LabelPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(373, 187);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Mot de passe";
+            this.LabelPassword.AutoSize = true;
+            this.LabelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.LabelPassword.ForeColor = System.Drawing.Color.White;
+            this.LabelPassword.Location = new System.Drawing.Point(373, 187);
+            this.LabelPassword.Name = "LabelPassword";
+            this.LabelPassword.Size = new System.Drawing.Size(93, 17);
+            this.LabelPassword.TabIndex = 9;
+            this.LabelPassword.Text = "Mot de passe";
             // 
             // Manegelec
             // 
@@ -112,17 +114,17 @@ namespace Projet
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(80)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(600, 388);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Connexion);
+            this.Controls.Add(this.LabelPassword);
+            this.Controls.Add(this.LabelUser);
+            this.Controls.Add(this.ConnexionButton);
             this.Controls.Add(this.MotdepasseText);
             this.Controls.Add(this.UtilisateurText);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PictureBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Manegelec";
             this.Text = "Manegelec - Accès à l\'application";
             this.Load += new System.EventHandler(this.Manegelec_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,12 +132,12 @@ namespace Projet
 
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PictureBox;
         private System.Windows.Forms.TextBox UtilisateurText;
         private System.Windows.Forms.TextBox MotdepasseText;
-        private System.Windows.Forms.Button Connexion;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ConnexionButton;
+        private System.Windows.Forms.Label LabelUser;
+        private System.Windows.Forms.Label LabelPassword;
     }
 }
 

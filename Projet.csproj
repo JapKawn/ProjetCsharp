@@ -114,6 +114,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Manager\LigneCommandeManager.cs" />
     <Compile Include="Service\DatabaseConnexion.cs" />
     <Compile Include="Entities\Client.cs" />
     <Compile Include="Entities\Commande.cs" />

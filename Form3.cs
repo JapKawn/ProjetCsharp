@@ -1,33 +1,31 @@
-﻿
-using Projet.Manager;
+﻿using Projet.Manager;
 using System;
-using System.Data;
-using System.Data.SqlClient;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Projet.Entities;
+using System.Collections.ObjectModel;
+using Projet.Service;
 
 namespace Projet
 {
     public partial class Form3 : Form
     {
-        private MySqlConnection connection = new MySqlConnection("Database=menagelecsharp;Server=localhost;User=root;Password=");
 
         public Form3()
         {
             InitializeComponent();
-
-            checkBox1.CheckedChanged += checkBox_CheckedChanged;
-            checkBox2.CheckedChanged += checkBox_CheckedChanged;
-            checkBox3.CheckedChanged += checkBox_CheckedChanged;
         }
 
         private bool ConnexionMysql()
         {
             try
             {
-                connection.Open();
-                MessageBox.Show("Connecté");
-                return true;
+                using (MySqlConnection connection = InitializeConnection.GetConnection())
+                {
+                    connection.Open();
+                    MessageBox.Show("Connecté");
+                    return true;
+                }
             }
             catch (Exception ex)
             {
@@ -40,9 +38,12 @@ namespace Projet
         {
             try
             {
-                connection.Close();
-                MessageBox.Show("Déconnecté");
-                return true;
+                using (MySqlConnection connection = InitializeConnection.GetConnection())
+                {
+                    connection.Close();
+                    MessageBox.Show("Déconnecté");
+                    return true;
+                }
             }
             catch (Exception ex)
             {
@@ -107,39 +108,116 @@ namespace Projet
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Code associé à un clic dans le dataGridView1
-        ]
+  
+            
+            
+        }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void CheckTout_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (CheckTout.Checked)
             {
-                checkBox2.Checked = false;
-                checkBox3.Checked = false;
+                CheckPayer.Checked = false;
+                CheckExpedier.Checked = false;
+
+                DataGridViewCommande.ColumnCount = 3;
+                DataGridViewCommande.ColumnHeadersVisible = true;
+
+                DataGridViewCommande.Columns[0].Name = "idCommande";
+                DataGridViewCommande.Columns[1].Name = "date";
+                DataGridViewCommande.Columns[2].Name = "client";
+
+                Collection<Commande> commandes = CommandeManager.ReadAllCommande();
+
+                foreach (Commande commande in commandes)
+                {
+                    DataGridViewCommande.Rows.Add(commande.IdCommande, commande.Date, commande.IdClient);
+                }
+            }
+            else
+            {
+                DataGridViewCommande.Rows.Clear();
             }
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        private void CheckPayer_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox2.Checked == true)
+            if (CheckPayer.Checked)
             {
-                checkBox1.Checked = false;
-                checkBox3.Checked = false;
+                CheckTout.Checked = false;
+                CheckExpedier.Checked = false;
+
+                DataGridViewCommande.ColumnCount = 3;
+                DataGridViewCommande.ColumnHeadersVisible = true;
+
+                DataGridViewCommande.Columns[0].Name = "idCommande";
+                DataGridViewCommande.Columns[1].Name = "date";
+                DataGridViewCommande.Columns[2].Name = "client";
+
+                Collection<Commande> commandes = CommandeManager.ReadAllCommande();
+
+                foreach (Commande commande in commandes)
+                {
+                    DataGridViewCommande.Rows.Add(commande.IdCommande, commande.Date, commande.IdClient);
+                }
+            }
+            else
+            {
+                DataGridViewCommande.Rows.Clear();
             }
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        private void CheckExpedier_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox3.Checked == true)
+            if (CheckExpedier.Checked)
             {
-                checkBox1.Checked = false;
-                checkBox2.Checked = false;
+                CheckTout.Checked = false;
+                CheckPayer.Checked = false;
+
+                DataGridViewCommande.ColumnCount = 3;
+                DataGridViewCommande.ColumnHeadersVisible = true;
+
+                DataGridViewCommande.Columns[0].Name = "idCommande";
+                DataGridViewCommande.Columns[1].Name = "date";
+                DataGridViewCommande.Columns[2].Name = "client";
+
+                Collection<Commande> commandes = CommandeManager.ReadAllCommande();
+
+                foreach (Commande commande in commandes)
+                {
+                    DataGridViewCommande.Rows.Add(commande.IdCommande, commande.Date, commande.IdClient);
+                }
+            }
+            else
+            {
+                DataGridViewCommande.Rows.Clear();
             }
         }
+
 
         private void label2_Click(object sender, EventArgs e)
         {
             // Code associé au clic sur le label2
+        }
+
+        private void checkBox3_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
