@@ -8,10 +8,8 @@ namespace Projet.Entities
 {
     public class LigneCommande
     {
-        public int Id { get; set; }
-        public DateTime Date { get; set; }
-        public bool EstPayee { get; set; }
-        public bool EstExpediee { get; set; }
-        public int ClientId { get; set; }
+        public int Produit { get; set; }
+        public int Commande { get; set; }
+        public int Quantite { get; set; }
     }
 }

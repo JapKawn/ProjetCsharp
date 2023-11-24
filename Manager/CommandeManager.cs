@@ -34,6 +34,7 @@ namespace Projet.Manager
                         // Gérer l'exception selon les besoins
                     }
                 }
+                connection.Close();
             }
         }
 
@@ -64,7 +65,9 @@ namespace Projet.Manager
                             CommandeConnection.Add(commande);
                         }
                     }
+
                 }
+                connection.Close();
             }
 
             return CommandeConnection;
@@ -89,6 +92,7 @@ namespace Projet.Manager
 
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
         }
 
@@ -111,6 +115,7 @@ namespace Projet.Manager
 
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
         }
 
@@ -129,6 +134,7 @@ namespace Projet.Manager
 
                     command.ExecuteNonQuery();
                 }
+                connection.Close();
             }
         }
     }

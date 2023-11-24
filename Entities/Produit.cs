@@ -17,6 +17,6 @@ namespace Projet.Entities
         public int Qte { get; set; }
         public decimal Prix { get; set; }
         public string FichierImage { get; set; }
-        public int FournisseurId { get; set; }
+        public int PkFournisseur { get; set; }
     }
 }

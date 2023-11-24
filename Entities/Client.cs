@@ -8,14 +8,14 @@ namespace Projet.Entities
 {
     class Client
     {
-        public int idClient { get; set; }
-        public string civilite { get; set; }
-        public string nom { get; set; }
-        public string prenom { get; set; }
-        public string adresse { get; set; }
-        public string ville { get; set; }
-        public string cp { get; set; }
-        public string mail { get; set; }
-        public string tel { get; set; }
+        public int IdClient { get; set; }
+        public string Civilite { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public string Adresse { get; set; }
+        public string Ville { get; set; }
+        public string Cp { get; set; }
+        public string Mail { get; set; }
+        public string Tel { get; set; }
     }
 }
