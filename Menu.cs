@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Projet
 {
-    public partial class Form2 : Form
+    public partial class Menu : Form
     {
-        public Form2()
+        public Menu()
         {
             InitializeComponent();
         }
@@ -20,7 +20,7 @@ namespace Projet
         private void button1_Click(object sender, EventArgs e)
         {
             // Instancier et afficher Form3
-            Form3 form3 = new Form3();
+            GestionCommand form3 = new GestionCommand();
             form3.Show();
 
             // Fermer Form2

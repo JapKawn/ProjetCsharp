@@ -8,10 +8,10 @@ using Projet.Service;
 
 namespace Projet
 {
-    public partial class Form3 : Form
+    public partial class GestionCommand : Form
     {
 
-        public Form3()
+        public GestionCommand()
         {
             InitializeComponent();
         }
@@ -71,7 +71,7 @@ namespace Projet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Menu form2 = new Menu();
             form2.Show();
             this.Hide();
         }
@@ -115,7 +115,7 @@ namespace Projet
 
         private void CheckTout_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckTout.Checked)
+            if (CheckTout.Checked = true)
             {
                 CheckPayer.Checked = false;
                 CheckExpedier.Checked = false;
@@ -142,7 +142,7 @@ namespace Projet
 
         private void CheckPayer_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckPayer.Checked)
+            if (CheckPayer.Checked = true)
             {
                 CheckTout.Checked = false;
                 CheckExpedier.Checked = false;
@@ -154,9 +154,9 @@ namespace Projet
                 DataGridViewCommande.Columns[1].Name = "date";
                 DataGridViewCommande.Columns[2].Name = "client";
 
-                Collection<Commande> commandes = CommandeManager.ReadAllCommande();
+                Collection<Commande> nonPayeeCommandes = CommandeManager.ReadNonPayeeCommandes();
 
-                foreach (Commande commande in commandes)
+                foreach (Commande commande in nonPayeeCommandes)
                 {
                     DataGridViewCommande.Rows.Add(commande.IdCommande, commande.Date, commande.IdClient);
                 }
@@ -169,7 +169,7 @@ namespace Projet
 
         private void CheckExpedier_CheckedChanged(object sender, EventArgs e)
         {
-            if (CheckExpedier.Checked)
+            if (CheckExpedier.Checked = true)
             {
                 CheckTout.Checked = false;
                 CheckPayer.Checked = false;
@@ -181,9 +181,9 @@ namespace Projet
                 DataGridViewCommande.Columns[1].Name = "date";
                 DataGridViewCommande.Columns[2].Name = "client";
 
-                Collection<Commande> commandes = CommandeManager.ReadAllCommande();
+                Collection<Commande> nonExpedieeCommandes = CommandeManager.ReadNonExpedieeCommandes();
 
-                foreach (Commande commande in commandes)
+                foreach (Commande commande in nonExpedieeCommandes)
                 {
                     DataGridViewCommande.Rows.Add(commande.IdCommande, commande.Date, commande.IdClient);
                 }

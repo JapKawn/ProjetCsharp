@@ -1,7 +1,7 @@
 ﻿
 namespace Projet
 {
-    partial class Form2
+    partial class Menu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Projet
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.PanelButton = new System.Windows.Forms.Button();
             this.LabelGestion = new System.Windows.Forms.Label();
             this.SuspendLayout();

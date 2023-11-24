@@ -8,6 +8,53 @@ namespace Projet.Manager
 {
     static class CommandeManager
     {
+        public static Collection<Commande> ReadNonPayeeCommandes()
+        {
+            string query = "SELECT * FROM commande WHERE estPayee = 0";
+            return ReadCommandes(query);
+        }
+
+        public static Collection<Commande> ReadNonExpedieeCommandes()
+        {
+            string query = "SELECT * FROM commande WHERE estExpediee = 0";
+            return ReadCommandes(query);
+        }
+
+        private static Collection<Commande> ReadCommandes(string query)
+        {
+            Collection<Commande> commandes = new Collection<Commande>();
+
+            using (MySqlConnection connexion = InitializeConnection.GetConnection())
+            {
+                connexion.Open();
+
+                using (MySqlCommand command = new MySqlCommand(query, connexion))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Commande commande = new Commande()
+                            {
+                                IdCommande = reader.GetInt32("id"),
+                                Date = reader.GetDateTime("date"),
+                                EstPayee = reader.GetBoolean("estPayee"),
+                                EstExpediee = reader.GetBoolean("estExpediee"),
+                                IdClient = reader.GetInt32("client")
+                            };
+
+                            commandes.Add(commande);
+                        }
+                    }
+                }
+
+                connexion.Close();
+            }
+
+            return commandes;
+        }
+
+
         public static void CreateCommande(Commande commande)
         {
             string query = "INSERT INTO commande (id, date, estPayee, estExpediee, client) VALUES (@id, @date, @estPayee, @estExpediee, @client)";
@@ -140,4 +187,5 @@ namespace Projet.Manager
             }
         }
     }
+
 }

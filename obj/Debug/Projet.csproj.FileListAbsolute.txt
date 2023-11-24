@@ -8,8 +8,6 @@ S:\ProjetC#\Projet\obj\Debug\Projet.csproj.GenerateResource.cache
 S:\ProjetC#\Projet\obj\Debug\Projet.csproj.CoreCompileInputs.cache
 S:\ProjetC#\Projet\obj\Debug\Projet.exe
 S:\ProjetC#\Projet\obj\Debug\Projet.pdb
-S:\ProjetC#\Projet\obj\Debug\Projet.Form2.resources
-S:\ProjetC#\Projet\obj\Debug\Projet.Form3.resources
 S:\ProjetC#\Projet\bin\Debug\BouncyCastle.Cryptography.dll
 S:\ProjetC#\Projet\bin\Debug\Google.Protobuf.dll
 S:\ProjetC#\Projet\bin\Debug\K4os.Compression.LZ4.dll
@@ -42,3 +40,5 @@ S:\ProjetC#\Projet\bin\Debug\System.Numerics.Vectors.xml
 S:\ProjetC#\Projet\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 S:\ProjetC#\Projet\bin\Debug\System.Threading.Tasks.Extensions.xml
 S:\ProjetC#\Projet\obj\Debug\Projet.csproj.CopyComplete
+S:\ProjetC#\Projet\obj\Debug\Projet.Menu.resources
+S:\ProjetC#\Projet\obj\Debug\Projet.GestionCommand.resources

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Projet
 {
-    partial class Form3
+    partial class GestionCommand
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Projet
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionCommand));
             this.MenuButton = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -318,7 +318,7 @@ namespace Projet
         protected System.Windows.Forms.CheckBox CheckExpedier;
         private DataGridViewCellEventHandler dataGridView1_CellContentClick_2;
 
-        public Form3(DataGridViewCellEventHandler dataGridView1_CellContentClick_2)
+        public GestionCommand(DataGridViewCellEventHandler dataGridView1_CellContentClick_2)
         {
             this.dataGridView1_CellContentClick_2 = dataGridView1_CellContentClick_2;
         }

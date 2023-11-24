@@ -39,7 +39,7 @@ namespace Projet
                 (identifiant == Identifiant2 && motDePasse == MotDePasse2))
             {
 
-                Form2 form2 = new Form2();
+                Menu form2 = new Menu();
                 form2.Show();
 
                 this.Hide();
